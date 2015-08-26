@@ -18,7 +18,13 @@ public class CasinoDeck implements IDeck<CasinoCard> {
 	}
 	@Override
 	public void Shuffle() {
-				
+		for(int i =deck.size()-1; i>0; i--){
+			int index = r.nextInt(i+1);
+			CasinoCard c = deck.get(index);
+			CasinoCard s = deck.get(i);
+			deck.set(index, s);
+			deck.set(i, c);
+		}
 	}
 
 	@Override
