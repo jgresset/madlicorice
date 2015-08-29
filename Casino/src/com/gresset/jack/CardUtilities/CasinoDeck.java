@@ -9,6 +9,7 @@ public class CasinoDeck implements IDeck<CasinoCard> {
 	private LinkedList<CasinoCard> deck;
 	private Random r;
 	public CasinoDeck(){
+		deck = new LinkedList<CasinoCard>();
 		r = new Random();
 		for(Suits s : Suits.values()){
 			for(CasinoRank r: CasinoRank.values()){
