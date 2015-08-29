@@ -38,5 +38,21 @@ public class CasinoCard extends AbstractCard {
 	public CasinoRank getRank(){
 		return rank;
 	}
-
+	@Override
+	public boolean equals(Object obj){
+		if(obj == null){
+			return false;
+		}
+		if(obj.getClass()!= this.getClass()){
+			return false;
+		}
+		final CasinoCard other = (CasinoCard)obj;
+		if(other.getRank()!=this.getRank()){
+			return false;
+		}
+		if(other.getSuit()!= this.getSuit()){
+			return false;
+		}
+		return true;
+	}
 }
