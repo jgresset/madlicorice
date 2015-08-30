@@ -55,4 +55,11 @@ public class CasinoCard extends AbstractCard {
 		}
 		return true;
 	}
+	@Override
+	public int hashCode(){
+		int hash = 1;
+		hash *= 17 + this.getSuit().hashCode();
+		hash *= 31 + this.getClass().hashCode();
+		return hash;
+	}
 }

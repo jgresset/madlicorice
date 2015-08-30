@@ -1,16 +1,17 @@
 package com.gresset.jack.CardUtilities;
 
 import java.util.Queue;
+import java.security.SecureRandom;
 import java.util.LinkedList;
-import java.util.Random;
 
 public class CasinoDeck implements IDeck<CasinoCard> {
 
 	private LinkedList<CasinoCard> deck;
-	private Random r;
+	private static SecureRandom r;
 	public CasinoDeck(){
 		deck = new LinkedList<CasinoCard>();
-		r = new Random();
+		if(r == null)
+			r = new SecureRandom();
 		for(Suits s : Suits.values()){
 			for(CasinoRank r: CasinoRank.values()){
 				deck.add(new CasinoCard(s,r));
